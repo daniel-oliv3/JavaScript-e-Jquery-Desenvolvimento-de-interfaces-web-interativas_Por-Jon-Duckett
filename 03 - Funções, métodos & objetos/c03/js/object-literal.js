@@ -19,7 +19,3 @@ elRooms.textContent = hotel.checkAvailability();
 
 
 
-/*
-NOTA: textContent não funciona no IE8 ou anterior
-Você pode usar innerHTML nas linhas 13 e 16, mas observe os problemas de segurança em p228-231
-*/
