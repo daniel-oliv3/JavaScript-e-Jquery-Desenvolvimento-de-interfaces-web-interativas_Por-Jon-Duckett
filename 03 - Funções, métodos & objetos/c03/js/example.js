@@ -34,24 +34,29 @@
     function offerExpires(today) {
         //declara as variáveis dentro da função para o escopo local
         var weekFromToday, day, date, month, year, dayNames, monthNames;
+
         //adiciona 7 dias á data/hora atual(adicionando em milissegundos)
         weekFromToday = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+
         //cria um array para armazenar os nomes dos dias/meses
         dayNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
         monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        
         //coleta partes da data para mostrar na página
         day = dayNames[weekFromToday.getDay()];
         date = weekFromToday.getDate();
         month = monthNames[weekFromToday.getMonth()];
         year = weekFromToday.getFullYear();
+        
         //cria a mensagem
         expiryMsg = 'A oferta expira em seguida ';
         expiryMsg += day + '<br/>(' + date + ' ' + month + ' ' + year + ')';
         return expiryMsg;
 
+    }    
         today = new Date(); //coloca a data de hoe na variável
         elEnds = document.getElementById('offerEnds'); //obtém o elemento offerEnds
         elEnds.innerHTML = offerExpires(today); //adiciona a mensagem
-    }
+    
     //fim da expressão de funcão imediatamente invocada
 }());
